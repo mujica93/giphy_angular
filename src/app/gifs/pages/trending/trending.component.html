@@ -1,0 +1,9 @@
+<div class="h-screen overflow-y-scroll grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-2 my-5" (scroll)="onScroll()" #scrollable>
+  @for (groups of giphyService.masonryGifs(); track $index) {
+    <div class="grid gap-4">
+      @for (group of groups; track group.id) {
+        <gifs-list-item url="{{group.url}}"/>
+      }
+    </div>
+  }
+</div>
